@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Lambda with Micronaut.
+
+Resources:
+  VendorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: vendor-function
+      CodeUri: target/vendor-service-0.1.jar
+      Handler: com.example.vendor.function.VendorFunction::execute
+      Runtime: java11
+      MemorySize: 1512
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 60

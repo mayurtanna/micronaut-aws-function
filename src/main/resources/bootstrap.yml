@@ -1,0 +1,10 @@
+micronaut:
+  application:
+    name: vendor-service
+aws:
+  region: us-west-2
+  lambda:
+    vendor-function:
+      functionName: VendorFunction
+      qualifier: VendorFunction
+
